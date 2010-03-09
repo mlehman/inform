@@ -1,0 +1,202 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Inform.Tests</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Inform.Tests</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <Name>nunit.framework</Name>
+      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Inform\Inform.csproj">
+      <Name>DataCommand</Name>
+      <Project>{365BAD89-A089-4153-83F2-071D24120042}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Circle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Comment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Employee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Manager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Posting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Rectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Shape.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Attributes\Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CacheMappingTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ConfigurationTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStorageManagerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\FindCollectionCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\FindObjectCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MappingTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\PlainObjects\Customer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbDataStorageManagerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbDataStoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbFindCollectionCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbFindObjectCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbFindObjectCommandUseSprocTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbMappingTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlCacheMappingTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlConfigurationTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataAccessCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataStorageManagerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataStoreTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlFindCollectionCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlFindObjectCommandTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlFindObjectCommandUseSprocTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlMappingTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Sql\Database.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -2,9 +2,11 @@ release
 doc
 *.sou
 *.scc
+*.SCC
 *.vssscc
 _sgbak
 bin
 obj
 CVS
+*.xml
 
