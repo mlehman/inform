@@ -1,0 +1,10 @@
+release
+doc
+*.sou
+*.scc
+*.vssscc
+_sgbak
+bin
+obj
+CVS
+

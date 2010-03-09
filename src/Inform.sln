@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inform", "Inform\Inform.csproj", "{365BAD89-A089-4153-83F2-071D24120042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inform.Tests", "Inform.Tests\Inform.Tests.csproj", "{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = Inform\\Inform.csproj
+		SccProjectName0 = $/Products/Inform/src/Inform
+		SccLocalPath0 = Inform
+		SccProvider0 = MSSCCI:SourceGear\u0020Vault\u0020Client
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = Inform.Tests\\Inform.Tests.csproj
+		SccProjectName1 = $/Products/Inform/src/Inform.Tests
+		SccLocalPath1 = Inform.Tests
+		SccProvider1 = MSSCCI:SourceGear\u0020Vault\u0020Client
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{365BAD89-A089-4153-83F2-071D24120042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{365BAD89-A089-4153-83F2-071D24120042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{365BAD89-A089-4153-83F2-071D24120042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{365BAD89-A089-4153-83F2-071D24120042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0EA6EF-C049-4A1D-9CC1-61D861B0AD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,2154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Inform</name>
+    </assembly>
+    <members>
+        <member name="T:Inform.Collections.ListDictionaryBase">
+            <exclude />
+        </member>
+        <member name="T:Inform.Common.CacheMapping">
+            <summary>
+            The mapping to a data source for a cache's relationship.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.CacheMapping.Relationship">
+            <summary>
+            The name of the <see cref="T:Inform.Common.RelationshipMapping"/> used by this cache mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.CacheMappingCollection">
+            <summary>
+            Represents a collection of CacheMapping objects.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.ConnectionManager">
+            <summary>
+            This type supports the Inform infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.ConnectionManager.CreateConnection">
+            <summary>
+            Creates a new IDbConnection.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.ConnectionManager.ConnectionString">
+            <summary>
+            The connection string for database connections.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.DataStorageManager">
+            <summary>
+            This type supports the Inform infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.DataStorageManager.GetDataStorageManager(Inform.DataStore)">
+            <summary>
+            Provides access to a DataStore's DataStorageManager.
+            </summary>
+            <param name="dataStore"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Inform.Common.DataStorageManager.CreateTypeMappingFromAttributes(System.Type)">
+            <summary>
+            Creates a TypeMapping using special attributes to classes and members.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.Common.DataStorageManager.TypeMappings">
+            <summary>
+            Gets the TypeMappingCollection.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStorageManager.RelationshipMappings">
+            <summary>
+            Gets the RelationshipMappingCollection.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStorageManager.ManagedDataStore">
+            <summary>
+            Gets the DataStore that created this DataStorageManager.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.DataStoreCollection">
+            <summary>
+            Represents a collection of DataStore objects.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.DataStoreConfiguration">
+            <summary>
+            This type supports the Inform infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.DataStoreConfiguration.LoadFromConfigSection">
+            <summary>
+            Initializes the DataStore(s) with setting in the DataStore .Net Configuration Section.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.DataStoreConfiguration.LoadXml(System.String)">
+            <summary>
+            Initialize the DataStore(s) with an external configuration file.
+            </summary>
+            <param name="filename">The xml configuration file.</param>
+        </member>
+        <member name="M:Inform.Common.DataStoreConfiguration.LoadXml(System.Xml.XmlNode)">
+            <summary>
+            Initialize the DataStore(s) with an external configuration file.
+            </summary>
+            <param name="filename">The xml configuration file.</param>
+        </member>
+        <member name="T:Inform.Common.DataStoreSettings">
+            <summary>
+            Represents the settings for a DataStore.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStoreSettings.AutoGenerate">
+            <summary>
+            Whether to auto generate type mappings by using attributes.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStoreSettings.CreateOnInitialize">
+            <summary>
+            Whether to create storage for type mappings on inialization when storage does not exist.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStoreSettings.UseStoredProcedures">
+            <summary>
+            Whether to use stored procedures as a default on type mappings.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.DataStoreSettings.FindObjectReturnsNull">
+            <summary>
+            Whether FindObject Commands return null or throw an exception.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.IDataParameterCommand">
+            <summary>
+            Interface for a parameterized comman.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.IDataParameterCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Common.IDataParameterCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="P:Inform.Common.IDataParameterCommand.Parameters">
+            <summary>
+            Gets the IDataParameterCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.MemberDbType">
+            <summary>
+            This type supports the Inform infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="M:Inform.Common.MemberDbType.ToSql">
+            <exclude />
+        </member>
+        <member name="P:Inform.Common.MemberDbType.Length">
+            <summary>
+            Length for a numeric data type is the number of bytes used to store the number. 
+            Length for a character string or Unicode data type is the number of characters. 
+            The length for binary data types is the number of bytes. 
+            </summary>
+        </member>
+        <member name="P:Inform.Common.MemberDbType.Precision">
+            <summary>
+            Precision is the number of digits in a number.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.MemberDbType.Scale">
+            <summary>
+            Scale is the number of digits to the right of the decimal point in a number.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.MemberMappingCollection">
+            <summary>
+            Represents a collection of IMemberMappings.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.MemberMappingError">
+            <summary>
+            Represents the error with a member mapping to a data source.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.MemberMappingError.MemberMapping">
+            <summary>
+            Gets the IMemberMapping for this error.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.MemberMappingError.ErrorCode">
+            <summary>
+            Gets the error code from this error.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.MemberMappingError.Description">
+            <summary>
+            Gets a friendly description of this error.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.MemberMappingError.MemberMappingErrorCode">
+            <summary>
+            The error code.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.NamespaceDoc">
+            <summary>
+            <para>
+            The Inform.Common namespace consists of the common classes used by providers for the Inform Object Relational Mapper. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Inform.Common.ObjectEnumerator">
+            <summary>
+            This type supports the Inform infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.RegisteredMemberMappingCollection">
+            <summary>
+            Represents a collection of registered membermapping types for a datastore.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.RelationshipMapping">
+            <summary>
+            Represents a parent/child relationship between two Types.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.RelationshipMappingCollection">
+            <summary>
+            Represents a collection of RelationShipMappings.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.TypeMapping">
+            <summary>
+            Contains a definition of a mapped relationship between a data source table and a <see cref="T:System.Type"/>. 
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.MappedType">
+            <summary>
+            The Type for this mapping.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.BaseType">
+            <summary>
+            The Base Type used for inherited mappings. 
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.PrimaryKey">
+            <summary>
+            The PrimaryKey for this mapping.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.TableName">
+            <summary>
+            The table for this Type.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.UseStoredProcedures">
+            <summary>
+            Whether to use stored procedures.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.SubClasses">
+            <summary>
+            Returns a list of types that are mapped as subclasses.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.CacheMappings">
+            <summary>
+            Returns a list of types that are mapped as subclasses.
+            </summary>
+        </member>
+        <member name="P:Inform.Common.TypeMapping.MemberMappings">
+            <summary>
+            The Collection of PropertyMappings.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.TypeMappingCollection">
+            <summary>
+            Represents a collection of TypeMappings.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.TypeMappingState">
+            <summary>
+            Represents the current state of a <see cref="T:Inform.Common.TypeMapping"/> with the data source. 
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbBooleanMapping">
+            <summary>
+            Summary description for SqlStringMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.ProviderBase.MemberMappingBase">
+            <summary>
+            Aids implementation of the IMemberMapping interface. Inheritors of MemberMappingBase 
+            implement a set of functions to specific to their MappedType, but inherit most of the 
+            functionality needed to fully implement a MemberMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.IMemberMapping">
+            <summary>
+            The mapping to a data source for a Type's field or property.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.Name">
+            <summary>
+            The member name.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.MappedType">
+            <summary>
+            The member name.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.MemberInfo">
+            <summary>
+            The MemberInfo for the property being mapped.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.ColumnName">
+            <summary>
+            The column name for the member.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.PrimaryKey">
+            <summary>
+            Whether this member is a primary key.
+            </summary>
+        </member>
+        <member name="P:Inform.IMemberMapping.Identity">
+            <summary>
+            Whether this member is an auto-incrementing.
+            </summary>
+            <remarks>
+            Setting Identity to true enables the Member to be populated with the value after an insert.
+            </remarks>
+        </member>
+        <member name="M:Inform.ProviderBase.MemberMappingBase.#ctor(System.Reflection.MemberInfo,Inform.Common.MemberDbType)">
+            <summary>
+            Creates a default mapping of to property with same name for ColumnName.
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:Inform.ProviderBase.MemberMappingBase.ConvertToStorageType(System.Object)">
+            <summary>
+            Convert the object for storage into the database.
+            </summary>
+        </member>
+        <member name="M:Inform.ProviderBase.MemberMappingBase.GetValue(System.Object)">
+            <summary>
+            Retrieve a value from object in Storage Type
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Inform.ProviderBase.MemberMappingBase.SetValue(System.Object,System.Object)">
+            <summary>
+            Set the value on the object with this value with Storage Type.
+            </summary>
+            <param name="target"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.MemberInfo">
+            <summary>
+            The PropertyInfo for the property being mapped.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.MappedType">
+            <summary>
+            The PropertyInfo for the property being mapped.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.Name">
+            <summary>
+            The column name for the property.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.ColumnName">
+            <summary>
+            The column name for the property.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.PrimaryKey">
+            <summary>
+            Whether this member is a primary key.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.MemberMappingBase.Identity">
+            <summary>
+            Whether this member is an auto-incrementing.
+            </summary>
+            <remarks>
+            Setting Identity to true enables the Member to be populated with the value after an insert.
+            </remarks>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbByteMapping">
+            <summary>
+            Summary description for OleDbByteMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbCharMapping">
+            <summary>
+            Summary description for OleDbCharMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbDateTimeMapping">
+            <summary>
+            Summary description for SqlStringMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbDecimalMapping">
+            <summary>
+            Summary description for OleDbDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbDoubleMapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbGuidMapping">
+            <summary>
+            Summary description for OleDbGuidMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbInt16Mapping">
+            <summary>
+            Summary description for OleDbInt16Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbInt32Mapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbInt64Mapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSingleMapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlBooleanMapping">
+            <summary>
+            Summary description for SqlSqlDateTimeMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlByteMapping">
+            <summary>
+            Summary description for OleDbSqlByteMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlDateTimeMapping">
+            <summary>
+            Summary description for SqlSqlDateTimeMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlDecimalMapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlDoubleMapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlGuidMapping">
+            <summary>
+            Summary description for OleDbSqlGuidMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlInt16Mapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlInt32Mapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlInt64Mapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlMoneyMapping">
+            <summary>
+            Summary description for OleDbSqlMoneyMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlSingleMapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbSqlStringMapping">
+            <summary>
+            Summary description for OleDbSqlDecimalMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.Mappings.OleDbStringMapping">
+            <summary>
+            Summary description for SqlStringMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbConnectionManager">
+            <summary>
+            OleDbConnectionManager.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbConnectionManager.CreateConnection">
+            <summary>
+            Creates a new OleDbConnection.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbDataAccessCommand">
+            <summary>
+            This is the base class for Data Access Commands.
+            
+            A OleDbDataAccessCommand can be used for queries that do not return result sets.  They may however still 
+            return data by registering an output parameter with CreateOutputParameter.  The result can be read 
+            after calling ExecuteNonQuery.
+            
+            Example usage:
+            <code>
+            IDataAccessCommand updateCommand = dataStore.createDataAccessCommand("Employees_UpdateEmployeeSalary");
+            updateCommand.CreateInputParameter("@EmployeeID",SqlDbType.Int, 2);
+            updateCommand.CreateInputParameter("@Salary",SqlDbType.Int, salary);
+            updateCommand.ExecuteNonQuery();
+            </code>
+            </summary>
+        </member>
+        <member name="T:Inform.IDataAccessCommand">
+            <summary>
+            An IDataAccessCommand can be used to execute queries directly with the data source.
+            </summary>
+            <example>
+            The following example executes a query with the default DataStore which does not return a result.
+            <code>
+            IDataAccessCommand updateCommand = DataStoreServices.Default.CreateDataAccessCommand("UPDATE Employee SET Title = @Title WHERE EmployeeID = @EmployeeID");
+            updateCommand.CreateInputParameter("@EmployeeID", 2);
+            updateCommand.CreateInputParameter("@Title", "Programmer");
+            updateCommand.ExecuteNonQuery();
+            </code>
+            </example>
+        </member>
+        <member name="M:Inform.IDataAccessCommand.ExecuteNonQuery">
+            <summary>
+            Executes a IDbCommand that returns no records.
+            </summary>
+        </member>
+        <member name="M:Inform.IDataAccessCommand.ExecuteScalar">
+            <summary>
+            Executes a IDbCommand and returns the first column of the first row.
+            </summary>
+        </member>
+        <member name="M:Inform.IDataAccessCommand.ExecuteReader">
+            <summary>
+            Gets the IDataReader that is the result of excuting a the IDataAccessCommand. The associated IDataReader is closed
+            when the IDataReader is closed.
+            </summary>
+        </member>
+        <member name="M:Inform.IDataAccessCommand.ExecuteReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the IDataReader that is the result of excuting a the IDataAccessCommand.
+            </summary>
+        </member>
+        <member name="M:Inform.IDataAccessCommand.ExecuteDataView">
+            <summary>
+            Get a DataView as the result of excuting a the IDataAccessCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.#ctor(Inform.OleDb.OleDbDataStore,System.String)">
+            <summary>
+            Creates the command.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.#ctor(Inform.OleDb.OleDbDataStore,System.String,System.Data.CommandType)">
+            <summary>
+            Creates the command as a specific command type.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteNonQuery">
+            <summary>
+            Executes a SqlCommand that returns no records.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteNonQuery(System.Data.CommandBehavior)">
+            <summary>
+            Executes a SqlCommand that returns no records.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteScalar">
+            <summary>
+            Executes a SqlCommand and returns the first columen of the first row.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteScalar(System.Data.CommandBehavior)">
+            <summary>
+            Executes a SqlCommand and returns the first columen of the first row.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteReader">
+            <summary>
+            Gets the SqlDataReader that is the result of excuting a SqlCommand. The associated SqlConnection is closed
+            when the SqlDataReader is close.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the SqlDataReader that is the result of excuting a SqlCommand.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbDataAccessCommand.ExecuteDataView">
+            <summary>
+            Get a DataView as the result of executing a SqlCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.OleDb.OleDbDataAccessCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbDataAccessCommand.CommandText">
+            <summary>
+            Gets the CommandText.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbDataAccessCommand.CommandType">
+            <summary>
+            Gets the CommandType.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbDataStorageManager">
+            <summary>
+            Summary description for OleDbDataStorageManager.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbDataStore">
+            <exclude/>
+            <summary>
+            Summary description for OleDbDataStore.
+            </summary>
+        </member>
+        <member name="T:Inform.DataStore">
+            <summary>
+            Provides a set of commands to access a relational database as both objects and relational data.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.CreateDataAccessCommand(System.String)">
+            <summary>
+            Creates an <see cref="T:Inform.IDataAccessCommand"/> with the text command to execute.
+            </summary>
+            <param name="cmdText">The text command to execute.</param>
+            <returns>An <see cref="T:Inform.IDataAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateDataAccessCommand(System.String,System.Data.CommandType)">
+            <summary>
+            Creates an <see cref="T:Inform.IDataAccessCommand"/> with the text command to execute and specifies how the text command is interpreted.
+            </summary>
+            <param name="cmdText">The text command to execute.</param>
+            <param name="commandType">Specifies how a command string is interpreted.</param>
+            <returns>An <see cref="T:Inform.IDataAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateObjectAccessCommand(System.Type,System.String)">
+            <summary>
+            Creates an <see cref="T:Inform.IObjectAccessCommand"/> with the type to return and filter to apply.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <returns>An <see cref="T:Inform.IObjectAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateObjectAccessCommand(System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates an <see cref="T:Inform.IObjectAccessCommand"/> with the type to return, a filter to apply, and whether to return subclasses.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <param name="polymorphic">Whether to return subclasses.</param>
+            <returns>An <see cref="T:Inform.IObjectAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateObjectAccessCommand(System.Type,System.String,System.Boolean,System.Data.CommandType)">
+            <summary>
+            Creates an <see cref="T:Inform.IObjectAccessCommand"/> with the type to return, the command text, whether to return subclasses, and specifies how the text command is interpreted.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="cmdText">The text command to execute.</param>
+            <param name="polymorphic">Whether to return subclasses.</param>
+            <param name="commandType">Specifies how a command string is interpreted.</param>
+            <returns>An <see cref="T:Inform.IObjectAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindObjectCommand(System.Type,System.String)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindObjectCommand"/> with the type to return and filter to apply.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <returns>An <see cref="T:Inform.IFindObjectCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindObjectCommand(System.Type,System.String,System.Data.CommandType)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindObjectCommand"/> with the type to return, the command text, and specifies how the text command is interpreted.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="cmdText">The text command to execute.</param>
+            <param name="commandType">Specifies how a command string is interpreted.</param>
+            <returns>An <see cref="T:Inform.IFindObjectCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindObjectCommand(System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindObjectCommand"/> with the type to return, the filter to apply, and whether to return subclasses.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <param name="polymorphic">Whether to return subclasses.</param>
+            <returns>An <see cref="T:Inform.IFindObjectCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindCollectionCommand(System.Type,System.String)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindCollectionCommand"/> with the type to return and filter to apply.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <returns>An <see cref="T:Inform.IFindCollectionCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindCollectionCommand(System.Type,System.String,System.Data.CommandType)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindCollectionCommand"/> with the type to return, the comand text, and specifies how the text command is interpreted.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="cmdText">The text command to execute.</param>
+            <param name="commandType">Specifies how a command string is interpreted.</param>
+            <returns>An <see cref="T:Inform.IFindCollectionCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.CreateFindCollectionCommand(System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates an <see cref="T:Inform.IFindCollectionCommand"/> with the type to return, the filter to apply, and whether to return subclasses.
+            </summary>
+            <param name="dynamicType">The type to return.</param>
+            <param name="filter">The filter to apply.</param>
+            <param name="polymorphic">Whether to return subclasses.</param>
+            <returns>An <see cref="T:Inform.IFindCollectionCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.Insert(System.Object,Inform.Common.TypeMapping)">
+            <summary>
+            Inserts an object into the data source.
+            </summary>
+            <param name="o">The object to insert.</param>
+            <param name="typeMapping">The TypeMapping that defines the mapping to the data source.</param>
+        </member>
+        <member name="M:Inform.DataStore.Update(System.Object,Inform.Common.TypeMapping)">
+            <summary>
+            Updates an object in the data source.
+            </summary>
+            <param name="o">The object to update.</param>
+            <param name="typeMapping">The TypeMapping that defines the mapping to the data source.</param>
+        </member>
+        <member name="M:Inform.DataStore.Delete(System.Type,System.Object)">
+            <summary>
+            Deletes an object from the data source by primary key..
+            </summary>
+            <param name="type">The <see cref="T:System.Type"/> of the object to be deleted.</param>
+            <param name="primaryKey">The value of the objects primary key.</param>
+            <remarks>Using a <see cref="T:System.Type"/> that does not have a primary key defined in its <see cref="T:Inform.Common.TypeMapping"/> will cause an exception.</remarks>
+        </member>
+        <member name="M:Inform.DataStore.FindByPrimaryKey(System.Type,System.Object)">
+            <summary>
+            Finds an object from the data source by primary key.
+            </summary>
+            <param name="type">The <see cref="T:System.Type"/> of the object to return.</param>
+            <param name="primaryKey">The value of the objects primary key.</param>
+            <returns>The object or <see langword="null"/> if not found. </returns>
+            <remarks> If the DataStore's <see cref="P:Inform.DataStore.Settings"/> FindObjectReturnsNull is <see langword="true"/> and the object is noe found, an <see cref="T:Inform.ObjectNotFoundException"/> will be thrown.
+            Using a <see cref="T:System.Type"/> that does not have a primary key defined in its <see cref="T:Inform.Common.TypeMapping"/> will cause an exception.
+            </remarks>
+        </member>
+        <member name="M:Inform.DataStore.#ctor">
+            <summary>
+            A DataStore normally is created through factory methods provided by <see cref="!:DataStoreSevices"/>.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.EnsureStorage">
+            <summary>
+            Creates storage in the datasource for the registered typemappings if it does not currently exist.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.CreateStorage(System.Type)">
+            <summary>
+            Creates the necessary tables and, if defined, stored procedures in the datasource for the type.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.CreateStorage(System.Type,System.Boolean)">
+            <summary>
+            Creates the necessary tables and,  if defined in the TypeMapping, stored procedures in the datasource for the type.
+            </summary>
+            <param name="autoGenerate">
+            Whether to auto generate type mappings by using attributes.
+            </param>
+        </member>
+        <member name="M:Inform.DataStore.CreateStorage(Inform.Common.TypeMapping)">
+            <summary>
+            Creates the necessary tables and,  if defined in the TypeMapping, stored procedures in the datasource for the type using a specific TypeMapping.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.ExistsStorage(System.Type)">
+            <summary>
+            Checks if the necessary tables and, if defined in the TypeMapping, stored procedures exists in the datasource for a type.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.DeleteStorage(System.Type)">
+            <summary>
+            Deletes the tables and, if defined in the TypeMapping, stored procedures from the data source for this type.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.Insert(System.Object)">
+            <summary>
+            Inserts an object into the data source.
+            </summary>
+            <param name="o">The object to insert.</param>
+        </member>
+        <member name="M:Inform.DataStore.Update(System.Object)">
+            <summary>
+            Updates an object int the data source.
+            </summary>
+            <param name="o">The object to update.</param>
+            <remarks>Using a <see cref="T:System.Type"/> that does not have a primary key defined in its <see cref="T:Inform.Common.TypeMapping"/> will cause an exception.</remarks>
+        </member>
+        <member name="M:Inform.DataStore.InsertOrUpdate(System.Object)">
+            <summary>
+            Inserts an object into the data source if the primary key is not set, otherwise updates the object.
+            </summary>
+            <param name="o">The object to insert or update.</param>
+            <remarks>Using a <see cref="T:System.Type"/> that does not have a primary key defined in its <see cref="T:Inform.Common.TypeMapping"/> will cause an exception.</remarks>
+        </member>
+        <member name="M:Inform.DataStore.Delete(System.Object)">
+            <summary>
+            Deletes an object from the data source.
+            </summary>
+            <param name="o">The object to insert or update.</param>
+            <remarks>Using a <see cref="T:System.Type"/> that does not have a primary key defined in its <see cref="T:Inform.Common.TypeMapping"/> will cause an exception.</remarks>
+        </member>
+        <member name="M:Inform.DataStore.SetContext(System.Object)">
+            <summary>
+            Sets the context on each <see cref="T:Inform.Common.CacheMapping"/> defined for an object.
+            </summary>
+            <param name="o">The object to set the context.</param>
+            <remarks>
+            Setting the context is only required when using cach mappings and the object was not inserted or retrieved from a DataStore command.
+            </remarks>
+        </member>
+        <member name="M:Inform.DataStore.BeginTransaction">
+            <summary>
+            Begins a database transaction.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.CommitTransaction">
+            <summary>
+            Commits the database transaction.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.RollbackTransaction">
+            <summary>
+            Rolls back a transaction from a pending state.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStore.GetDataAccessCommand(System.String)">
+            <summary>
+            Returns a pre-defined IDataAccessCommand.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An <see cref="T:Inform.IDataAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.GetObjectAccessCommand(System.String)">
+            <summary>
+            Returns a pre-defined IObjectAccessCommand.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An <see cref="T:Inform.IObjectAccessCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.GetFindObjectCommand(System.String)">
+            <summary>
+            Returns a pre-defined IFindObjectCommand.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An <see cref="T:Inform.IFindObjectCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.GetFindCollectionCommand(System.String)">
+            <summary>
+            Returns a pre-defined IFindCollectionCommand.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>An <see cref="T:Inform.IFindCollectionCommand"/> object.</returns>
+        </member>
+        <member name="M:Inform.DataStore.Clone">
+            <summary>
+            As each instance of DataStore is not thread, this creates a copy of this DataStore object that can be safely used.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.DataStore.Name">
+            <summary>
+            Gets or sets the <see cref="T:Inform.DataStore"/> name.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.Settings">
+            <summary>
+            The <see cref="T:Inform.Common.DataStoreSettings"/> for the <see cref="T:Inform.DataStore"/>.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.InTransaction">
+            <summary>
+            Whether a transaction has been started;
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.CurrentTransaction">
+            <summary>
+            Gets the current IDbTransaction if the <see cref="T:Inform.DataStore"/> is currently in a transaction, otherwise returns <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.Connection">
+            <exclude/>
+            <summary>
+            Gets the <see cref="T:Inform.Common.ConnectionManager"/> for database connections.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.DataStorageManager">
+            <summary>
+            The DataStorageManager.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStore.Commands">
+            <summary>
+            The Predefined Commands.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbFindCollectionCommand">
+            <summary>
+            Summary description for SqlFindCollectionCommand.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbFindObjectCommand">
+            <summary>
+            Summary description for SqlFindObjectCommand.
+            </summary>
+        </member>
+        <member name="T:Inform.IFindObjectCommand">
+            <summary>
+            An IFindObjectCommand can be used to execute queries to return an object from with the data source.
+            </summary>
+            <example>
+            The following example executes a IFindObjectCommand with the default DataStore.
+            <code>
+            IFindObjectCommand findCommand = DataStoreServices.Default.CreateFindObjectCommand(typeof(Employee),"WHERE Title = 'CEO'");
+            Employee ceo = (Employee)findCommand.Execute();
+            </code>
+            </example>
+        </member>
+        <member name="M:Inform.IFindObjectCommand.Execute">
+            <summary>
+            Executes the IFindObjectCommand.
+            </summary>
+            <returns>The object.</returns>
+        </member>
+        <member name="P:Inform.IFindObjectCommand.CustomPopulate">
+            <preliminary/>
+            <summary>
+            A CustomPopulate delegate can be provided to override the population of an object.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String,System.Boolean,System.Data.CommandType)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="oleDbType">The data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="oleDbType">The data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType)">
+            <summary>
+            Creates a new output parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="oleDbType">The data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="oleDbType">The data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindObjectCommand.Execute">
+            <summary>
+            Executes the FindObjectCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.OleDb.OleDbFindObjectCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.IFindCollectionCommand">
+            <summary>
+            An IFindCollectionCommand can be used to execute queries to return a collection of objects from with the data source.
+            </summary>
+            <example>
+            The following example executes a IFindCollectionCommand with the default DataStore.
+            <code>
+            IFindCollectionCommand findCommand = DataStoreServices.Default.CreateFindCollectionCommand(typeof(Employee),"WHERE Title = @Title");
+            findCommand.CreateInputParameter("@Title", "Programmer");
+            IList employees = findCommand.Execute();
+            </code>
+            </example>
+        </member>
+        <member name="M:Inform.IFindCollectionCommand.Execute">
+            <summary>
+            Executes the IFindCollectionCommand.
+            </summary>
+        </member>
+        <member name="P:Inform.IFindCollectionCommand.CustomPopulate">
+            <preliminary/>
+            <summary>
+            A CustomPopulate delegate can be provided to override the population of an object.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindCollectionCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String)">
+            <summary>
+            Creates a new SqlFindCollectionCommand Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindCollectionCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String,System.Data.CommandType)">
+            <summary>
+            Creates a new SqlFindCollectionCommand Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindCollectionCommand.#ctor(Inform.OleDb.OleDbDataStore,System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+        </member>
+        <member name="M:Inform.OleDb.OleDbFindCollectionCommand.Execute">
+            <summary>
+            Executes the Data Access Command.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Inform.OleDb.OleDbMemberDbType">
+            <summary>
+            Summary description for SqlPropertyDbType.
+            </summary>
+        </member>
+        <member name="T:Inform.IObjectAccessCommand">
+            <summary>
+            An IObjectAccessCommand can be used to execute queries to return a stream of objects from with the data source.
+            </summary>
+            <example>
+            The following example executes a IObjectAccessCommand with the default DataStore.
+            <code>
+            IObjectAccessCommand objectAccessCommand = DataStoreServices.Default.CreateObjectAccessCommand(typeof(Employee),"WHERE Title = @Title");
+            objectAccessCommand.CreateInputParameter("@Title", "Programmer");
+            IObjectReader reader = objectAccessCommand.ExecuteObjectReader();
+            </code>
+            </example>
+        </member>
+        <member name="M:Inform.IObjectAccessCommand.ExecuteObjectReader">
+            <summary>
+            Gets the IObjectReader that is the result of excuting a IObjectAccessCommand. The associated IDbConnection is closed
+            when the IObjectReader is closed.
+            </summary>
+        </member>
+        <member name="M:Inform.IObjectAccessCommand.ExecuteObjectReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the IObjectReader that is the result of excuting a IObjectAccessCommand.
+            </summary>
+        </member>
+        <member name="P:Inform.IObjectAccessCommand.CustomPopulate">
+            <preliminary/>
+            <summary>
+            A CustomPopulate delegate can be provided to override the population of an object.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="oleDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="oleDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateInputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="oleDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType)">
+            <summary>
+            Creates a new output parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="oleDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.CreateOutputParameter(System.String,System.Data.OleDb.OleDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.ExecuteObjectReader">
+            <summary>
+            Gets the OleDbObjectReader that is the result of excuting a OleDbObjectAccessCommand. The associated OleDbConnection is closed
+            when the OleDbObjectReader is close.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectAccessCommand.ExecuteObjectReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the OleDbObjectReader that is the result of excuting a OleDbObjectAccessCommand.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbObjectAccessCommand.CustomPopulate">
+            <summary>
+            Custom Populate Method.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbObjectAccessCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.OleDb.OleDbObjectReader">
+            <summary>
+            Summary description for SqlObjectReader.
+            </summary>
+        </member>
+        <member name="T:Inform.IObjectReader">
+            <summary>
+            Creates a stream of objects from an IDataReader.
+            </summary>
+        </member>
+        <member name="M:Inform.IObjectReader.Close">
+            <summary>
+            Closes the IObjectReader 0bject.
+            </summary>
+        </member>
+        <member name="M:Inform.IObjectReader.GetObject">
+            <summary>
+            Retrieves the current object the IObjectReader is reading.
+            </summary>
+        </member>
+        <member name="M:Inform.IObjectReader.Read">
+            <summary>
+            Advances the IObjectReader to the next object.
+            </summary>
+            <returns>
+            true if there are more objects; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Inform.IObjectReader.IsClosed">
+            <summary>
+            Gets a value indicating whether the object reader is closed.
+            </summary>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectReader.PopulateObject(System.Data.IDataReader)">
+            <summary>
+            Populates the object from a SqlDataReader.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Inform.OleDb.OleDbObjectReader.DynamicPopulation(System.Data.IDataReader)">
+            <summary>
+            Populates an object using dynamic population.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.OleDb.OleDbObjectReader.CustomPopulate">
+            <summary>
+            Custom Populate Method.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbObjectReader.DynamicType">
+            <summary>
+            Type of object to populate is using dynamic population.
+            </summary>
+        </member>
+        <member name="P:Inform.OleDb.OleDbObjectReader.IsCustomPopulation">
+            <summary>
+            Determines whether to perform dynamic population.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Inform.ProviderBase.CacheBase">
+            <exclude />
+            <summary>
+            Aids implementation of a cache.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.CacheBase.DataStore">
+            <exclude />
+            <summary>
+            The DataStore used in the relationship.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.CacheBase.CacheSource">
+            <exclude />
+            <summary>
+            The source object in the relationship.
+            </summary>
+        </member>
+        <member name="P:Inform.ProviderBase.CacheBase.RelationshipName">
+            <exclude />
+            <summary>
+            The name of the relationship.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlBoolMapping">
+            <summary>
+            Summary description for SqlBoolMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlByteArrayMapping">
+            <summary>
+            Summary description for SqlBoolMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlByteMapping">
+            <summary>
+            Summary description for SqlByteMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlCharMapping">
+            <summary>
+            Summary description for SqlCharMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlDateTimeMapping">
+            <summary>
+            Summary description for SqlDateTimeMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlDecimalMapping">
+            <summary>
+            Summary description for SqlDoubleMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlDoubleMapping">
+            <summary>
+            Summary description for SqlDoubleMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlEnumMapping">
+            <summary>
+            Summary description for SqlEnumMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlGuidMapping">
+            <summary>
+            Summary description for SqlGuidMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlInt16Mapping">
+            <summary>
+            Summary description for SqlInt16Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlInt32Mapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlInt64Mapping">
+            <summary>
+            Summary description for SqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSingleMapping">
+            <summary>
+            Summary description for SqlSingleMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlBooleanMapping">
+            <summary>
+            Summary description for SqlSqlBooleanMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlByteMapping">
+            <summary>
+            Summary description for SqlSqlBooleanMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlDateTimeMapping">
+            <summary>
+            Summary description for SqlSqlDateTimeMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlDecimalMapping">
+            <summary>
+            Summary description for SqlSqlDoubleMapping.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.Mappings.SqlSqlDecimalMapping.ConvertToStorageType(System.Object)">
+            <summary>
+            Convert the object for storage into the database.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlDoubleMapping">
+            <summary>
+            Summary description for SqlSqlDoubleMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlGuidMapping">
+            <summary>
+            Summary description for SqlSqlGuidMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlInt16Mapping">
+            <summary>
+            Summary description for SqlSqlInt16Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlInt32Mapping">
+            <summary>
+            Summary description for SqlSqlInt32Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlInt64Mapping">
+            <summary>
+            Summary description for SqlSqlInt64Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlMoneyMapping">
+            <summary>
+            Summary description for SqlSqlInt16Mapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlSingleMapping">
+            <summary>
+            Summary description for SqlSqlSingleMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlSqlStringMapping">
+            <summary>
+            Summary description for SqlSqlStringMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.Mappings.SqlStringMapping">
+            <summary>
+            Summary description for SqlStringMapping.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlConnectionManager">
+            <summary>
+            Summary description for SqlConnectionManager.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlConnectionManager.CreateConnection">
+            <summary>
+            Creates a new SqlConnection.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlDataAccessCommand">
+            <summary>
+            This is the base class for Data Access Commands.
+            
+            A SqlDataAccessCommand can be used for queries that do not return result sets.  They may however still 
+            return data by registering an output parameter with CreateOutputParameter.  The result can be read 
+            after calling ExecuteNonQuery.
+            
+            Example usage:
+            <code>
+            SqlDataAccessCommand updateCommand = dataStore.createDataAccessCommand("Employees_UpdateEmployeeSalary");
+            updateCommand.CreateInputParameter("@EmployeeID",SqlDbType.Int, 2);
+            updateCommand.CreateInputParameter("@Salary",SqlDbType.Int, salary);
+            updateCommand.ExecuteNonQuery();
+            </code>
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.#ctor(Inform.Sql.SqlDataStore,System.String)">
+            <summary>
+            Creates the command.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.#ctor(Inform.Sql.SqlDataStore,System.String,System.Data.CommandType)">
+            <summary>
+            Creates the command as a specific command type.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateOutputParameter(System.String,System.Data.SqlDbType)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.CreateOutputParameter(System.String,System.Data.SqlDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteNonQuery">
+            <summary>
+            Executes a SqlCommand that returns no records.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteNonQuery(System.Data.CommandBehavior)">
+            <summary>
+            Executes a SqlCommand that returns no records.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteScalar">
+            <summary>
+            Executes a SqlCommand and returns the first columen of the first row.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteScalar(System.Data.CommandBehavior)">
+            <summary>
+            Executes a SqlCommand and returns the first columen of the first row.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteReader">
+            <summary>
+            Gets the SqlDataReader that is the result of excuting a SqlCommand. The associated SqlConnection is closed
+            when the SqlDataReader is close.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the SqlDataReader that is the result of excuting a SqlCommand.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlDataAccessCommand.ExecuteDataView">
+            <summary>
+            Get a DataView as the result of executing a SqlCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.Sql.SqlDataAccessCommand.Transaction">
+            <summary>
+            Gets or sets the transaction in which the Command object executes.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlDataAccessCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlDataAccessCommand.Inform#Common#IDataParameterCommand#Parameters">
+            <summary>
+            Gets the IDataParameterCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlDataStorageManager">
+            <summary>
+            Summary description for SqlDataStorageManager.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlDataStore">
+            <exclude/>
+            <summary>
+            Summary description for SqlDataStore.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlFindCollectionCommand">
+            <summary>
+            Summary description for SqlFindCollectionCommand.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlFindObjectCommand">
+            <summary>
+            Summary description for SqlFindObjectCommand.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String,System.Boolean,System.Data.CommandType)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateOutputParameter(System.String,System.Data.SqlDbType)">
+            <summary>
+            Creates a new output parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.CreateOutputParameter(System.String,System.Data.SqlDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlFindObjectCommand.Execute">
+            <summary>
+            Executes the FindObjectCommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.Sql.SqlFindObjectCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlFindCollectionCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String)">
+            <summary>
+            Creates a new SqlFindCollectionCommand Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.Sql.SqlFindCollectionCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String,System.Data.CommandType)">
+            <summary>
+            Creates a new SqlFindCollectionCommand Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+            <param name="dynamicObjectType">The type of object to populate dynamically.</param>
+        </member>
+        <member name="M:Inform.Sql.SqlFindCollectionCommand.#ctor(Inform.Sql.SqlDataStore,System.Type,System.String,System.Boolean)">
+            <summary>
+            Creates a new SqlFindObject Command.
+            </summary>
+            <param name="storeProcedureName">The name of the stored procedure to call.</param>
+        </member>
+        <member name="M:Inform.Sql.SqlFindCollectionCommand.Execute">
+            <summary>
+            Executes the Data Access Command.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Inform.Sql.SqlMemberDbType">
+            <summary>
+            Summary description for SqlPropertyDbType.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlObjectAccessCommand">
+            <summary>
+            Summary description for SqlObjectAccessCommand.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateInputParameter(System.String,System.Object)">
+            <summary>
+            Creates a new input parameter for the stored procedure.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserID",SqlDbType.Int, userID);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateInputParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            Creates a new input parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the input parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+            <example>CreateInputParameter(command, "@UserName",SqlDbType.NVarChar,20,userName);</example>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateOutputParameter(System.String)">
+            <summary>
+            Creates a new output parameter for a stored procedure.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateOutputParameter(System.String,System.Data.SqlDbType)">
+            <summary>
+            Creates a new output parameter for the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.CreateOutputParameter(System.String,System.Data.SqlDbType,System.Int32)">
+            <summary>
+            Creates a new output parameter the command.
+            </summary>
+            <param name="parameterName">The name of the output parameter.</param>
+            <param name="sqlDbType">The sql data type.</param>
+            <param name="size">The size of the underlying column.</param>
+            <param name="paramValue">The value of the input paramter.</param>
+            <returns>The new parameter.</returns>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.ExecuteObjectReader">
+            <summary>
+            Gets the SqlObjectReader that is the result of excuting a SqlCommand. The associated SqlConnection is closed
+            when the SqlObjectReader is close.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectAccessCommand.ExecuteObjectReader(System.Data.CommandBehavior)">
+            <summary>
+            Gets the SqlObjectReader that is the result of excuting a SqlCommand.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlObjectAccessCommand.CustomPopulate">
+            <summary>
+            Custom Populate Method.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlObjectAccessCommand.Parameters">
+            <summary>
+            Gets the SqlParameterCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.Sql.SqlObjectReader">
+            <summary>
+            Summary description for SqlObjectReader.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectReader.#ctor(Inform.Sql.SqlDataStore,System.Data.SqlClient.SqlDataReader,System.Type,System.Boolean)">
+            <summary>
+            Creates a new SqlObjectReader.
+            </summary>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectReader.PopulateObject(System.Data.IDataReader)">
+            <summary>
+            Populates the object from a SqlDataReader.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Inform.Sql.SqlObjectReader.DynamicPopulation(System.Data.IDataReader)">
+            <summary>
+            Populates an object using dynamic population.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Inform.Sql.SqlObjectReader.CustomPopulate">
+            <summary>
+            Custom Populate Method.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlObjectReader.DynamicType">
+            <summary>
+            Type of object to populate is using dynamic population.
+            </summary>
+        </member>
+        <member name="P:Inform.Sql.SqlObjectReader.IsCustomPopulation">
+            <summary>
+            Determines whether to perform dynamic population.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Fluent.Text.StringConcatenator">
+            <exclude />
+        </member>
+        <member name="T:Inform.CacheMappingAttribute">
+            <summary>
+            Specifies the configuration of a cache for the delayed loading of a related object or objects.
+            The CacheAttribute can be applied to a field or read/write property that returns a <see cref="T:Inform.ObjectCache"/> or a <see cref="T:Inform.CollectionCache"/>.
+            </summary>
+        </member>
+        <member name="P:Inform.CacheMappingAttribute.Relationship">
+            <summary>
+            The name of a relationship mapping that defines the relationship used in the cache.
+            <seealso cref="T:Inform.RelationshipMappingAttribute"/>
+            </summary>
+        </member>
+        <member name="T:Inform.CollectionCache">
+            <summary>
+            Enables the delayed loading of related objects.
+            </summary>
+            <remarks>
+            You can cast the delay loaded objects as your specific object type.
+            </remarks>
+            <example>
+            The following example uses a class that has delay loaded objects.
+            <code>
+            
+            Employee e =  DataStoreServices.Default.FindByPrimaryKey(typeof(Employee), 1);
+            
+            //The first access of a CachedCollection will load the related tasks.
+            foreach(Task t in e.Tasks){
+            	Console.WriteLine("Task: {0}", t.Description);
+            }
+            
+            </code>
+            
+            The following example is a class with a mapping specified by attributes. 
+            The <see cref="T:Inform.RelationshipMappingAttribute"/> applied to the <see cref="T:Inform.CollectionCache"/> is 
+            a shortcut that implies a <see cref="T:Inform.CacheMappingAttribute"/>.
+            <code>
+            public class Employee {
+            
+            	[MemberMapping(PrimaryKey=true,Identity=True)] public string EmployeeID;	
+            	[MemberMapping(length=10, AllowNulls=false)] public string FirstName;
+            	[MemberMapping(length=20, AllowNulls=false)] public string LastName;
+            	[MemberMapping(length=30)] public string Title;
+            
+            	[RelationshipMapping(Name="Employee_Tasks", ParentMember="EmployeeID", 
+            		ChildType=typeof(Task), ChildMember="AssignedEmployeeID"]
+            	private CollectionCache taskCache = new CollectionCache();
+            
+            	public IList Tasks {
+            		get { return this.taskCache.CachedCollection; }
+            	}
+            
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Inform.CollectionCache.CachedCollection">
+            <summary>
+            Returns the delay loaded objects.
+            </summary>
+        </member>
+        <member name="T:Inform.DataStoreException">
+            <summary>
+            Represents the exception that is thrown when errors are generated using Inform components.
+            </summary>
+        </member>
+        <member name="T:Inform.DataStoreServices">
+            <summary>
+            Provides static methods to aid with DataStore registration and retrieval.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStoreServices.GetDataStore(System.String)">
+            <summary>
+            Returns a registered datastore with the specified name.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStoreServices.RegisterDataStore(Inform.DataStore)">
+            <summary>
+            Registers a datastore with the datastore services.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStoreServices.UnregisterDataStore(System.String)">
+            <summary>
+            Unregisters a particular datastore from the registered datastores list.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStoreServices.Initialize">
+            <summary>
+            Registers the datastores from the .Net Configuration files.
+            </summary>
+        </member>
+        <member name="M:Inform.DataStoreServices.Initialize(System.String)">
+            <summary>
+            Initialize the datastores from an external configuration file.
+            </summary>
+            <param name="filename">The xml configuration file.</param>
+        </member>
+        <member name="M:Inform.DataStoreServices.Initialize(System.Xml.XmlNode)">
+            <summary>
+            Initialize the datastores from an XmlNode.
+            </summary>
+            <param name="filename">The XmlNode.</param>
+        </member>
+        <member name="P:Inform.DataStoreServices.Initialized">
+            <summary>
+            Whether a Initialized
+            </summary>
+        </member>
+        <member name="P:Inform.DataStoreServices.RegisteredDataStores">
+            <summary>
+            Gets a list of currently registered datastores.
+            </summary>
+        </member>
+        <member name="P:Inform.DataStoreServices.Default">
+            <summary>
+            Gets the datastore with the first index in the registered datastores.
+            </summary>
+        </member>
+        <member name="T:Inform.CustomPopulate">
+            <preliminary/>
+            <summary>
+            A CustomPopulate delegate can provide a custom population of an object.
+            </summary>
+        </member>
+        <member name="T:Inform.MemberMappingAttribute">
+            <summary>
+            Specifies a mapping to a data source for a Type's field or property.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.Length">
+            <summary>
+            The Length (or Size) of a primitive data type.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.Precision">
+            <summary>
+            The Precision of a primitive data type.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.Scale">
+            <summary>
+            The Scale of a primitive data type.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.AllowNulls">
+            <summary>
+            Whether the primitive data type is nullable.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.ColumnName">
+            <summary>
+            The column name to map to the property.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.PrimaryKey">
+            <summary>
+            Whether this member is a primary key.
+            </summary>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.Identity">
+            <summary>
+            Whether this member is an auto-incrementing.
+            </summary>
+            <remarks>
+            Setting Identity to true enables the Member to be populated with the value after an insert.
+            </remarks>
+        </member>
+        <member name="P:Inform.MemberMappingAttribute.Ignore">
+            <summary>
+            Ignore this property for typemapping.
+            </summary>
+        </member>
+        <member name="T:Inform.NamespaceDoc">
+            <summary>
+            <para>
+            The Inform namespace consists of the primary classes for using the Inform Object Relational Mapper. 
+            The Inform Object Relational Mapper enables you to work with multiple data sources as objects or relational data. 
+            </para>
+            <para>
+            For information on how this namespace can help you, see the <see cref="T:Inform.DataStore"/> class.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Inform.ObjectCache">
+            <summary>
+            Enables the delayed loading of a related object.
+            </summary>
+        </member>
+        <member name="T:Inform.ObjectNotFoundException">
+            <summary>
+            Represents the exception that is optionally thrown when a <see cref="T:Inform.IFindObjectCommand"/> does not find an object.
+            </summary>
+        </member>
+        <member name="T:Inform.Relationship">
+            <summary>
+            Summary description for Relationship.
+            </summary>
+        </member>
+        <member name="T:Inform.RelationshipMappingAttribute">
+            <summary>
+            Specifies a parent/child relationship between two Types.
+            </summary>
+        </member>
+        <member name="T:Inform.Common.TypeCollection">
+            <summary>
+            Summary description for TypeCollection.
+            </summary>
+        </member>
+        <member name="T:Inform.TypeMappingAttribute">
+            <summary>
+            Specifies a mapping to a data source for a Type.
+            </summary>
+        </member>
+        <member name="P:Inform.TypeMappingAttribute.TableName">
+            <summary>
+            Allows the setting of a specific name for the table for a type.
+            </summary>
+        </member>
+        <member name="P:Inform.TypeMappingAttribute.BaseType">
+            <summary>
+            The Base Type used for inherited mappings. 
+            </summary>
+        </member>
+        <member name="T:Inform.TypeMappingException">
+            <summary>
+            Represents the exception that is thrown when errors are generated using a TypeMapping.
+            </summary>
+        </member>
+    </members>
+</doc>

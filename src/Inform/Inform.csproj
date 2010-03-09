@@ -1,0 +1,438 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{365BAD89-A089-4153-83F2-071D24120042}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Inform</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Inform</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CacheMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\ListDictionaryBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CachedList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CacheMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\CacheMappingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStorageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStoreCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStoreConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DataStoreSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\IDataParameterCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MemberDbType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MemberMappingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MemberMappingError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\NamespaceDoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ObjectEnumerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\RegisteredMemberMappingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\RelationshipMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\RelationshipMappingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\TypeMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\TypeMappingCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\TypeMappingState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStoreException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataStoreServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDataAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFindCollectionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFindObjectCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMemberMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IObjectAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IObjectReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MemberMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NamespaceDoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectNotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbBooleanMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbByteMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbCharMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbDateTimeMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbDecimalMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbDoubleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbGuidMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbInt16Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbInt32Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbInt64Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSingleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlBooleanMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlByteMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlDateTimeMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlDecimalMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlDoubleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlGuidMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlInt16Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlInt32Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlInt64Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlMoneyMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlSingleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbSqlStringMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\Mappings\OleDbStringMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbDataAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbDataStorageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbDataStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbFindCollectionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbFindObjectCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbMemberDbType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbObjectAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OleDb\OleDbObjectReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderBase\CacheBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderBase\MemberMappingBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationship.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelationshipMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlBoolMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlByteArrayMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlByteMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlCharMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlDateTimeMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlDecimalMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlDoubleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlEnumMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlGuidMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlInt16Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlInt32Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlInt64Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSingleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlBooleanMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlByteMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlDateTimeMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlDecimalMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlDoubleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlGuidMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlInt16Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlInt32Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlInt64Mapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlMoneyMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlSingleMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlSqlStringMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\Mappings\SqlStringMapping.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataStorageManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlDataStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlFindCollectionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlFindObjectCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlMemberDbType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlObjectAccessCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\SqlObjectReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Text\StringConcatenator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeMappingException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sql\Mappings\CVS\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
