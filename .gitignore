@@ -1,6 +1,6 @@
 release
 doc
-*.sou
+*.suo
 *.scc
 *.SCC
 *.vssscc
