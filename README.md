@@ -16,3 +16,7 @@ Persistence Features
 Database
 ==========
 - Supports Microsoft Sql Server and Microsoft Access, without requiring code changes.
+
+License
+==========
+Inform is released under the [MIT License](http://www.opensource.org/licenses/MIT).
